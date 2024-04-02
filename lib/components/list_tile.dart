@@ -19,7 +19,7 @@ class MyListTile extends StatelessWidget {
       title: Text(title),
       onTap: onTap,
       trailing: trailing,
-      titleTextStyle: TextStyle(
+      titleTextStyle: const TextStyle(
         fontWeight: FontWeight.bold,
         fontSize: 20,
         color: Colors.black,

@@ -3,7 +3,7 @@ import 'package:logzee/screens/login_screen.dart';
 import 'package:logzee/screens/register_screen.dart';
 
 class LogOrRegScreen extends StatefulWidget {
-  const LogOrRegScreen({Key? key}) : super(key: key);
+  const LogOrRegScreen({super.key});
 
   @override
   State<LogOrRegScreen> createState() => _LogOrRegScreenState();

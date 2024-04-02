@@ -61,7 +61,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             context,
             MaterialPageRoute(
                 builder: (context) =>
-                    Wrapper()), // Navigate to the Wrapper screen
+                    const Wrapper()), // Navigate to the Wrapper screen
           );
         } else {
           Navigator.pop(context);

@@ -10,7 +10,7 @@ import 'package:logzee/wrapper.dart';
 
 class LoginScreen extends StatefulWidget {
   final Function()? onTap;
-  const LoginScreen({Key? key, required this.onTap}) : super(key: key);
+  const LoginScreen({super.key, required this.onTap});
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
@@ -82,8 +82,8 @@ class _LoginScreenState extends State<LoginScreen> {
         backgroundColor: Colors.grey.shade200,
         title: const Center(
           child: Padding(
-            padding: const EdgeInsets.only(right: 50),
-            child: const Text(
+            padding: EdgeInsets.only(right: 50),
+            child: Text(
               'Login',
               style: TextStyle(
                 color: Colors.black,

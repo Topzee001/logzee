@@ -64,7 +64,7 @@ class _ForgottenPasswordScreenState extends State<ForgottenPasswordScreen> {
         backgroundColor: Colors.grey.shade200,
         title: const Center(
           child: Padding(
-            padding: const EdgeInsets.only(right: 50),
+            padding: EdgeInsets.only(right: 50),
             child: Text(
               'Password reset',
               style: TextStyle(
