@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:logzee/components/my_button.dart';
 import 'package:logzee/components/my_textfield.dart';
 import 'package:logzee/components/square_tile.dart';
+import 'package:logzee/screens/forget_password_screen.dart';
 //import 'package:logzee/screens/home_screen.dart';
 import 'package:logzee/services/auth_service.dart';
 import 'package:logzee/wrapper.dart';
@@ -79,31 +80,18 @@ class _LoginScreenState extends State<LoginScreen> {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.grey.shade200,
-        // leading: Padding(
-        //   padding: const EdgeInsets.only(left: 10),
-        // child: IconButton(
-        //   onPressed: () {
-        //     Navigator.pop(context);
-        //   },
-        //   icon: const Icon(
-        //     Icons.arrow_back,
-        //     size: 30,
-        //     color: Colors.black,
-        //   ),
-        // ),
-        // ),
-
         title: const Center(
-            child: Padding(
-          padding: const EdgeInsets.only(right: 50),
-          child: const Text(
-            'Login',
-            style: TextStyle(
-              color: Colors.black,
-              fontWeight: FontWeight.bold,
+          child: Padding(
+            padding: const EdgeInsets.only(right: 50),
+            child: const Text(
+              'Login',
+              style: TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
-        )),
+        ),
         leading: Container(
           height: 0,
           width: 0,
@@ -142,8 +130,15 @@ class _LoginScreenState extends State<LoginScreen> {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 30.0),
                       child: GestureDetector(
-                        onTap: () {},
-                        child: Text(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const ForgottenPasswordScreen()),
+                          );
+                        },
+                        child: const Text(
                           'Forgotten password?',
                           style: TextStyle(
                               color: Colors.blue, fontWeight: FontWeight.bold),

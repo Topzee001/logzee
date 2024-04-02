@@ -88,4 +88,8 @@ class AuthService {
       print('Error signing out: $error');
     }
   }
+
+  Future<void> passwordReset(String email) async {
+    await auth.sendPasswordResetEmail(email: email);
+  }
 }
