@@ -9,6 +9,8 @@ class ProfileScreen extends StatelessWidget {
   final user = FirebaseAuth.instance.currentUser;
   //final AuthService _authService = AuthService();
 
+  Future<void> editField(String field) async {}
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,15 +44,39 @@ class ProfileScreen extends StatelessWidget {
           ),
 
 //user details
-          const Text(
-            'My Details',
+          Padding(
+            padding: const EdgeInsets.only(left: 25.0),
+            child: const Text(
+              'My Details',
+            ),
           ),
 
           //username
-          const MyTextBox(
-            sectionName: 'user bio',
+          MyTextBox(
+            sectionName: 'Username',
             text: 'Ibrahim',
-          )
+            onPressed: () {
+              editField('username');
+            },
+          ),
+          MyTextBox(
+            sectionName: 'bio',
+            text: 'No bio yet',
+            onPressed: () {
+              editField('username');
+            },
+          ),
+
+          const SizedBox(
+            height: 10,
+          ),
+
+          Padding(
+            padding: const EdgeInsets.only(left: 25.0),
+            child: const Text(
+              'My post',
+            ),
+          ),
         ],
       ),
     );

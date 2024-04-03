@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 //import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -33,10 +34,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
     try {
       if (passwordController.text == confirmPasswordController.text) {
         //final userCredential =
-        await AuthService().registerUser(
+        final userCredential = await AuthService().registerUser(
           email: emailController.text,
           password: passwordController.text,
         );
+
+//create collection in firestore
+        FirebaseFirestore.instance.collection("Users").doc(userCredential.user!.email).set({'username: ' emailController.text.split('@')[0] ,
+        'bio' : 'Empty bio...', 
+        // can add other fields
+        });
+
         if (FirebaseAuth.instance.currentUser != null) {
           // Send email verification
           try {
